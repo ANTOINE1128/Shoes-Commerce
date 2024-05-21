@@ -72,11 +72,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             // Other items in the drawer
-            Expanded(
+            const Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.only(left: 20.0),
                       child: ListTile(
                         leading: Icon(
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.only(left: 20, bottom: 20),
                       child: ListTile(
                         leading: Icon(
