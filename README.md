@@ -54,7 +54,7 @@ In order to clone this project you need:
 -  go to your terminal 
 - write this command line: 
 
-git clone https://github.com/ANTOINE1128/Shoes-Commerce.git
+git clone https://github.com/ANTOINE1128/shoes_commerce
 
 - Clone this repository to your desired folder:
 
