@@ -4,7 +4,12 @@ import 'package:shoes_commerce/models/shoe.dart';
 // ignore: must_be_immutable
 class ShoeTile extends StatelessWidget {
   Shoe shoe;
-  ShoeTile({super.key, required this.shoe});
+  void Function()? onTap;
+  ShoeTile({
+    super.key,
+    required this.shoe,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +25,14 @@ class ShoeTile extends StatelessWidget {
         children: [
           // shoe pic
           ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-            child: Image.asset(
-              shoe.imagePath,
-              fit: BoxFit.cover,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+            child: SizedBox(
+              height: 220, // Set a consistent height for all images
               width: double.infinity,
+              child: Image.asset(
+                shoe.imagePath,
+                fit: BoxFit.cover, // Ensure the image covers the box
+              ),
             ),
           ),
 
@@ -63,17 +71,20 @@ class ShoeTile extends StatelessWidget {
                 ),
                 //plus btn
                 // ignore: prefer_const_constructors
-                Container(
-                    padding: const EdgeInsets.all(25),
-                    decoration: const BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(12),
-                            bottomRight: Radius.circular(12))),
-                    child: const Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    )),
+                GestureDetector(
+                  onTap: onTap,
+                  child: Container(
+                      padding: const EdgeInsets.all(25),
+                      decoration: const BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(12),
+                              bottomRight: Radius.circular(12))),
+                      child: const Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      )),
+                ),
               ],
             ),
           )
